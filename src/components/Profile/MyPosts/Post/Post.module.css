@@ -3,3 +3,8 @@
 .item {
     color: greenyellow;
 }
+
+.images {
+    width: 50px;
+    border-radius: 20px;
+}

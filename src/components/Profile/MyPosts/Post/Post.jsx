@@ -2,20 +2,12 @@ import React from 'react';
 import s from './Post.module.css'
 
 let Post;
-Post = () => {
+Post = (props) => {
     return <div>
-        My posts
-        <div>
-            new post
+        <img className={s.images} src = "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcT9MvvCu2uZUeq_EYdsKE132cebunludxEJniucd8ejNSIp3TWP"/>
+        {props.message}
+        <div><span> likes {props.likes}</span></div>
         </div>
-        <div>
-            post1
-        </div>
-        <div>
-            post2
-        </div>
-    </div>
-
 };
 
 

@@ -14,7 +14,8 @@ MyPosts = () => {
             <button>Add post</button>
         </div>
         <div>
-            <Post />
+            <Post message = "Im beagle" likes = "15"/>
+            <Post message = "i love people" likes = "23"/>
         </div>
     </div>
 
