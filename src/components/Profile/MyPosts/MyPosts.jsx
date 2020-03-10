@@ -2,14 +2,15 @@ import React from 'react';
 import s from './MyPosts.module.css'
 import Post from "./Post/Post";
 
-let MyPosts;
-MyPosts = (props) => {
 
 
-    let postElement =
-        props.posts.map ((p) => <Post message = {p.message} likes = {p.likes}/>)
+const MyPosts = (props) => {
 
-    return <div>
+
+    let postElement = props.posts.map ((posts) => <Post message = {posts.message} likes = {posts.likes}/>)
+
+    return (
+    <div>
         My posts
         <div>
             new post
@@ -22,7 +23,7 @@ MyPosts = (props) => {
             {postElement}
         </div>
     </div>
-
+    )
 };
 
 
