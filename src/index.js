@@ -4,7 +4,7 @@ import './index.css';
 import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
-import store from './redux/state.js';
+import store from './redux/redux-store.js';
 import {BrowserRouter, Route} from "react-router-dom";
 
 
@@ -20,7 +20,10 @@ export let rerenderEntireTree = () => {
 
 
 rerenderEntireTree(store.getState());
-store.subscribe(rerenderEntireTree);
+store.subscribe(() => {
+    let state = store.getState();
+    rerenderEntireTree();
+});
 
 // If you want your app to work offline and load faster, you can change
 // unregister() to register() below. Note this comes with some pitfalls.
