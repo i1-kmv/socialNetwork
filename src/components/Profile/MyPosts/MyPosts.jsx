@@ -28,7 +28,7 @@ let onPostChange = () => {
     <div>
         My posts
         <div>
-            new post
+            'new post'
         </div>
         <div>
             <textarea onChange={onPostChange} ref = {newPostElement} value={props.newPostText}/>
