@@ -2,7 +2,6 @@ import React from 'react';
 import Header from "./Header";
 import * as axios from "axios";
 import {connect} from "react-redux";
-import mapStateToProps from "react-redux/lib/connect/mapStateToProps";
 import {setAuthUserData} from "../../redux/auth-reducer";
 
 
@@ -18,18 +17,20 @@ import {setAuthUserData} from "../../redux/auth-reducer";
                      let {userId, email, login} = response.data.data;
                      this.props.setAuthUserData(userId, email, login);
                  }
-         });
+              });
      }
 
-     render()
-    {
-        return <Header {...this.props} />
-    }
+     render() {
+        return (
+            <Header {...this.props} />
+        )
+      }
 }
+
 
 const mapStateToProps = (state) => ({
     isAuth: state.auth.isAuth,
-    login: state.auth.login,
-})
+    login: state.auth.login
+});
 
-export default connect (mapStateToProps, {setAuthUserData}) (HeaderContainer);
+export default  connect(mapStateToProps, {setAuthUserData}) (HeaderContainer)
